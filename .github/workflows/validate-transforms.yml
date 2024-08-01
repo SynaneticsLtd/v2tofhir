@@ -32,8 +32,9 @@ jobs:
       - name: STU3 Interweave Validation
         run: java -jar validator_cli.jar fhir/*.json -ig packages/stu3-interweave-0.1.0.tgz -html-output stu3-interweave-validation.html
 
-      - name: R4 Interweave Validation
-        run: java -jar validator_cli.jar fhir/*.json -ig packages/r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
+# Removing this as would require another template due to different cannonical for R4, but leaving in comment for reference.
+#      - name: R4 Interweave Validation
+#        run: java -jar validator_cli.jar fhir/*.json -ig packages/r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
 
       - name: Store Validation Outputs
         uses: actions/upload-artifact@v3

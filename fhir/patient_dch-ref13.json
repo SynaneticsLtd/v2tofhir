@@ -1,4 +1,9 @@
 {
+  "meta" : {
+    "profile" : [
+      "https://fhir.yhcr.nhs.uk/StructureDefinition/Interweave-Patient"
+    ]
+  },
   "resourceType": "Patient",
   "identifier": [
     {
@@ -8,6 +13,7 @@
   ],
   "name": [
     {
+      "use" : "official",
       "family": "KRAY",
       "given": [
         "Ronnie"

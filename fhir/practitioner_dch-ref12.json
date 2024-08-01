@@ -1,5 +1,16 @@
 {
+  "meta" : {
+    "profile" : [
+      "https://fhir.yhcr.nhs.uk/StructureDefinition/Interweave-Practitioner"
+    ]
+  },
   "resourceType": "Practitioner",
+  "identifier": [
+    {
+      "system": "https://fhir.hl7.org.uk/Id/gmc-number",
+      "value": "J81068"
+    }
+  ],
   "name": [
     {
       "family": "SMART",
