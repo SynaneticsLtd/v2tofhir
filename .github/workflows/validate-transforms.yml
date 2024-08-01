@@ -30,10 +30,10 @@ jobs:
         run: chmod +x ./scripts/test_transforms.sh; ./scripts/test_transforms.sh
 
       - name: STU3 Interweave Validation
-        run: java -jar validator_cli.jar fhir/*.json -ig stu3-interweave-0.1.0.tgz -html-output stu3-interweave-validation.html
+        run: java -jar validator_cli.jar fhir/*.json -ig packages/stu3-interweave-0.1.0.tgz -html-output stu3-interweave-validation.html
 
       - name: R4 Interweave Validation
-        run: java -jar validator_cli.jar fhir/*.json -ig r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
+        run: java -jar validator_cli.jar fhir/*.json -ig packages/r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
 
       - name: Store STU3 Validation Output
         uses: actions/upload-artifact@v3
