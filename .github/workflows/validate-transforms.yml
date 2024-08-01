@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      - run: pip install -r tests/requirements.txt;
+      - run: pip install -r ./requirements.txt;
 
       - name: Test transforms
         run: cd scripts; chmod +x test_transforms.sh; ./test_transforms.sh; cd ..
