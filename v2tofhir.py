@@ -1,4 +1,3 @@
-import json
 import argparse
 from lib import v2tojson
 from lib import jsontofhir
