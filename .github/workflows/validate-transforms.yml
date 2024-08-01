@@ -35,7 +35,7 @@ jobs:
       - name: R4 Interweave Validation
         run: java -jar validator_cli.jar fhir/*.json -ig packages/r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
 
-      - name: Store STU3 Validation Output
+      - name: Store Validation Outputs
         uses: actions/upload-artifact@v3
         with:
           name: Validation Artefacts
