@@ -1,0 +1,48 @@
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download validator_cli
+        run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r tests/requirements.txt;
+
+      - name: Test transforms
+        run: cd scripts; chmod +x test_transforms.sh; ./test_transforms.sh; cd ..
+
+      - name: STU3 Interweave Validation
+        run: java -jar validator_cli.jar fhir/*.json -ig stu3-interweave-0.1.0.tgz -html-output stu3-interweave-validation.html
+
+      - name: R4 Interweave Validation
+        run: java -jar validator_cli.jar fhir/*.json -ig r4-interweave-0.1.0.tgz -html-output r4-interweave-validation.html
+
+      - name: Store STU3 Validation Output
+        uses: actions/upload-artifact@v3
+        with:
+          name: Validation Artefact
+          path: ./stu3-interweave-validation.html
+
+      - name: Store R4 Validation Output
+        uses: actions/upload-artifact@v3
+        with:
+          name: Validation Artefact
+          path: ./r4-interweave-validation.html

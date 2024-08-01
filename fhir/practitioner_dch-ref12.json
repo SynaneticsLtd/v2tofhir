@@ -1,0 +1,14 @@
+{
+  "resourceType": "Practitioner",
+  "name": [
+    {
+      "family": "SMART",
+      "given": [
+        "S"
+      ],
+      "prefix": [
+        "DR"
+      ]
+    }
+  ]
+}
