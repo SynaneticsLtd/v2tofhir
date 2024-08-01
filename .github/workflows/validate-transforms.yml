@@ -27,7 +27,7 @@ jobs:
       - run: pip install -r ./requirements.txt;
 
       - name: Test transforms
-        run: cd scripts; chmod +x test_transforms.sh; ./test_transforms.sh; cd ..
+        run: chmod +x ./scripts/test_transforms.sh; ./scripts/test_transforms.sh
 
       - name: STU3 Interweave Validation
         run: java -jar validator_cli.jar fhir/*.json -ig stu3-interweave-0.1.0.tgz -html-output stu3-interweave-validation.html

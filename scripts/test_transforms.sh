@@ -1,8 +1,8 @@
 #!/bin/bash
 
-V2_MESSAGES=../v2
-TEMPLATES=../templates
-EXPECTED_FHIR=../fhir
+V2_MESSAGES=./v2
+TEMPLATES=./templates
+EXPECTED_FHIR=./fhir
 TMP_FHIR=/tmp/fhir
 
 mkdir -p $TMP_FHIR
@@ -13,7 +13,7 @@ for v2msg in $V2_MESSAGES/*.v2; do
   for template in $TEMPLATES/*$BASE_V2_NAME*.mustache; do
 
     BASE_TEMPLATE_NAME=$(basename $template | cut -f 1 -d '.');
-    python3 ../v2tofhir.py -m $v2msg -t $template > $TMP_FHIR/$BASE_TEMPLATE_NAME.json;
+    python3 ./v2tofhir.py -m $v2msg -t $template > $TMP_FHIR/$BASE_TEMPLATE_NAME.json;
   
   done
 
