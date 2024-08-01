@@ -38,11 +38,5 @@ jobs:
       - name: Store STU3 Validation Output
         uses: actions/upload-artifact@v3
         with:
-          name: Validation Artefact
-          path: ./stu3-interweave-validation.html
-
-      - name: Store R4 Validation Output
-        uses: actions/upload-artifact@v3
-        with:
-          name: Validation Artefact
-          path: ./r4-interweave-validation.html
+          name: Validation Artefacts
+          path: ./*.html
