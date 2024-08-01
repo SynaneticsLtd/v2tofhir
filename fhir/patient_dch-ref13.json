@@ -2,7 +2,7 @@
   "resourceType": "Patient",
   "identifier": [
     {
-      "system": "https://fhir.nhs.uk/Id/nhs-numberx",
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
       "value": "4768290736"
     }
   ],

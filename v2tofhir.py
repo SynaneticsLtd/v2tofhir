@@ -19,8 +19,6 @@ def main():
     fhir = jsontofhir.convert(v2json, args.template.name)
     
     print(fhir)
-    print(v2json)
-
 
 if __name__ == "__main__":
     main()
