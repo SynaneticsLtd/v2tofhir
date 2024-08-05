@@ -37,7 +37,7 @@ options:
 ## Examples
 
 ```sh
-python v2tofhir.py -m ./v2/dch-ref12.v2 -t ./templates/patient_dch-ref12.mustache > fhir/patient_dch-ref12.json
+python v2tofhir.py -m ./v2/dch-ref12.v2 -t ./templates/patient_dch-ref12.mustache
 ```
 
 ## Pipeline validation
